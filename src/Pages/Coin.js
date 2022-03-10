@@ -9,7 +9,6 @@ const Coin = () => {
       axios.get(`https://api.coingecko.com/api/v3/coins/${id}`)
         .then(res => {
             setCoin(res.data)
-            console.log(res.data)
         }).catch(error => console.log(error))
   }, [id])
   return (
@@ -18,7 +17,7 @@ const Coin = () => {
       <div className='w-full flex justify-center items-center flex-col'>
         <div className='flex justify-center items-center h-10vh md:h-20vh'>
           <img src={coin?.image?.small} alt={coin.name} className='w-40px h-40px mr-2 md:w-50px md:h-50px'/>
-          <p className='text-3xl font-bold md:text-4xl'>{coin.name}</p>
+          <p className='text-2xl font-bold md:text-4xl'>{coin.name}</p>
         </div>
         <div className='grid place-items-center'>
           <p className='text-lg font-bold text-center w-100px h-28px bg-cyan-800 text-slate-100 rounded-md'>{coin?.symbol}</p>
