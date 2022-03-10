@@ -26,15 +26,15 @@ const CoinsTwo = () => {
             <p className='text-lg px-2 font-bold text-cyan-800'>2</p>
             <div className='w-32px h-32px'></div>
         </div>
-        <div className='w-full pt-2 flex justify-start items-center flex-col'>
+        <div className='w-full pt-2 flex justify-start items-center flex-col px-4'>
             {coins.length === 0 ? "Loading..." : searchedCoin.map((coin, index) => (
-                <Link to={`/coin/${coin.id}`} key={index} className='hover:bg-cyan-100 w-400px h-100px md:w-1000px mb-2 md:mb-4'>
-                    <div className='w-400px overflow-hidden border-2 border-solid border-cyan-800 rounded-md h-100px flex justify-center items-center md:w-1000px'>
+                <Link to={`/coin/${coin.id}`} key={index} className='hover:bg-cyan-100 w-full h-100px md:w-1000px mb-2 md:mb-4'>
+                    <div className='w-full overflow-hidden border-2 border-solid border-cyan-800 rounded-md h-100px flex justify-center items-center md:w-1000px'>
                         <div className='w-1/2 h-full flex justify-start items-center pl-2 md:w-1/5'>
                             <img src={coin.image} alt={coin.name} className='w-40px h-40px mr-2'/>
                             <p className='font-bold text-lg'>{coin.name}</p>
                         </div>
-                        <div className='w-1/5 flex flex-col justify-center items-center'>
+                        <div className='hidden w-1/5 md:flex flex-col justify-center items-center'>
                             <div>
                                 <p className='font-bold inline after:content[""] after:w-full after:h-1px after:bg-stone-800 after:block'>Market Cap</p>
                             </div>
@@ -42,7 +42,7 @@ const CoinsTwo = () => {
                                 <p className='font-bold'>${coin.market_cap.toLocaleString()}</p>
                             </div>
                         </div>
-                        <div className='w-1/5 flex justify-center items-center flex-col'>
+                        <div className='hidden w-1/5 md:flex justify-center items-center flex-col'>
                             <div>
                                 <p className='font-bold inline after:content[""] after:w-full after:h-1px after:bg-stone-800 after:block'>Volume</p>
                             </div>
@@ -50,7 +50,7 @@ const CoinsTwo = () => {
                                 <p className='font-bold'>${coin.total_volume.toLocaleString()}</p>
                             </div>
                         </div>
-                        <div className='w-1/5 grid place-items-center'>
+                        <div className='hidden w-1/5 md:grid place-items-center'>
                             {coin.price_change_percentage_24h < 0 ? <p className='font-bold bg-red-800 w-100px h28px text-center rounded-md text-slate-100'>{coin.price_change_percentage_24h.toFixed(2)}%</p> : <p className='font-bold bg-green-800 w-100px h28px text-center rounded-md text-slate-100'>{coin.price_change_percentage_24h.toFixed(2)}%</p>}
                         </div>
                         <div className='w-1/2 h-full flex justify-end items-center pr-2 md:w-1/5'>

@@ -48,7 +48,7 @@ const Coin = () => {
           <p className='font-bold md:text-2xl'>Price Change $:</p>
         </div>
         <div>
-            {coin?.market_data?.price_change_percentage_24h < 0 ? <p className='font-bold md:text-2xl'>- ${coin?.market_data?.price_change_24h?.in_currency?.usd.toLocaleString()}%</p> : <p className='font-bold md:text-2xl'>+ ${coin?.market_data?.price_change_24h_in_currency?.usd?.toLocaleString()}</p>}
+            <p className='font-bold md:text-2xl'>{coin?.market_data?.price_change_24h_in_currency?.usd.toLocaleString()}</p>
         </div>
       </div>
       {/*Market Cap*/}

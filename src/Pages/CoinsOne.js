@@ -26,10 +26,10 @@ const CoinsOne = () => {
                 <IoIosArrowForward className='text-cyan-800 text-lg'/>
             </Link>
         </div>
-        <div className='w-full pt-2 flex justify-start items-center flex-col'>
+        <div className='w-full pt-2 flex justify-start items-center flex-col px-4'>
             {coins.length === 0 ? "Loading..." : searchedCoin.map((coin, index) => (
-                <Link to={`/coin/${coin.id}`} key={index} className='hover:bg-cyan-100 w-400px h-100px md:w-1000px mb-2 md:mb-4'>
-                    <div className='w-400px overflow-hidden border-2 border-solid border-cyan-800 rounded-md h-100px flex justify-center items-center md:w-1000px'>
+                <Link to={`/coin/${coin.id}`} key={index} className='hover:bg-cyan-100 w-full h-100px md:w-1000px mb-2 md:mb-4'>
+                    <div className='w-full overflow-hidden border-2 border-solid border-cyan-800 rounded-md h-100px flex justify-center items-center md:w-1000px'>
                         <div className='w-1/2 h-full flex justify-start items-center pl-2 md:w-1/5'>
                             <img src={coin.image} alt={coin.name} className='w-40px h-40px mr-2'/>
                             <p className='font-bold text-lg'>{coin.name}</p>
