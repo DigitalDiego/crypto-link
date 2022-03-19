@@ -51,6 +51,7 @@ module.exports = {
         "cyanBlur":"rgba(21, 94, 117, .8)",
       },
       spacing:{
+        "1em":"1em",
         "10vh":"10vh",
         "20vh":"20vh",
         "100%":"100%"
