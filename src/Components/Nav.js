@@ -21,7 +21,7 @@ const Nav = () => {
         <Link className='text-4xl' to="/">Crypto Link</Link>
         <nav className='hidden md:flex justify-center items-center'>
             {links.map((link, index) => (
-                <Link className='ml-8' to={link.link} key={index}>
+                <Link className='ml-8 2xl:text-lg' to={link.link} key={index}>
                     {link.name}
                 </Link>
             ))}
