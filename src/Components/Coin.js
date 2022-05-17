@@ -38,7 +38,7 @@ const Coin = () => {
             <p className={coin?.market_data?.price_change_percentage_24h < 0 ? 'flex justify-center items-center text-[crimson]' : 'flex justify-center items-center text-[lime]'}>
                 <BsArrowUp className={coin?.market_data?.price_change_percentage_24h < 0 ? "hidden" : "inline mr-1"}/>
                 <BsArrowDown className={coin?.market_data?.price_change_percentage_24h < 0 ? "inline mr-1" : "hidden"}/>
-                ${coin?.market_data?.price_change_percentage_24h_in_currency?.usd.toLocaleString()}
+                ${coin?.market_data?.price_change_24h_in_currency?.usd.toLocaleString()}
             </p>
         </div>
         <div className='w-full h-[8vh] flex justify-between items-center border-b-solid border-slate-100 border-b-[1px] text-xl md:w-3/5'>
