@@ -7,7 +7,7 @@ import {BsArrowUp, BsArrowDown} from "react-icons/bs"
 const PageOne = () => {
   const [coins, setCoins] = useState([])
   const [search, setSearch] = useState("")
-  const  [page, setPage] = useState(1)
+  const [page, setPage] = useState(1)
   useEffect(() => {
     axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=${page}&sparkline=false`)
       .then(res => {
