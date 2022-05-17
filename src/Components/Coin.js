@@ -12,10 +12,10 @@ const Coin = () => {
         }).catch(error => {console.log(error)})
   }, [])
   return (
-    <div className='px-4 flex justify-start items-center flex-col'>
+    <div className='w-full h-[90vh] px-4 flex justify-center items-center flex-col'>
         <div className='w-full h-[8vh] flex justify-center items-center'>
             <img className='w-8 h-8 mr-1' src={coin?.image?.small} alt={coin.name} />
-            <p className='text-2xl'>{coin?.name}</p>
+            <p className='text-2xl 2xl:text-3xl'>{coin?.name}</p>
         </div>
         <div className='w-full h-[8vh] flex justify-between items-center border-b-solid border-slate-100 border-b-[1px] text-xl md:w-3/5'>
             <p>Symbol</p>
