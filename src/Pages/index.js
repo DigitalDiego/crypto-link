@@ -1,5 +1,0 @@
-export {default as Home} from "./Home"
-export {default as CoinsOne} from "./CoinsOne"
-export {default as CoinsTwo} from "./CoinsTwo"
-export {default as Coin} from "./Coin"
-export {default as News} from "./News"

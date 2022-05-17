@@ -4,3 +4,18 @@
 body {
   font-family: "Quicksand", sans-serif;
 }
+@media only screen and (min-width:768px){
+  .nav-width{
+    width:calc(70% / 4);
+  }
+}
+.scrollbar::-webkit-scrollbar{
+  width:5px;
+}
+.scrollbar-track::-webkit-scrollbar-track{
+  border:none;
+}
+.scrollbar-thumb::-webkit-scrollbar-thumb{
+  border-radius:10px;
+  background:#1F2937;
+}

@@ -1,27 +1,17 @@
-import React, {useState} from 'react'
-import {Nav, SideMenu} from "./Components"
-import {Home, CoinsOne, CoinsTwo, Coin, News} from "./Pages"
+import React from 'react'
+import {Nav, Market, Watchlist, News, Coin} from "./components"
 import {Routes, Route} from "react-router-dom"
 const App = () => {
-  const [nav, setNav] = useState(false)
-  const handleNav = () => {
-    setNav(!nav)
-  }
-  const handleScroll = () => {
-    window.scrollTo(0, 0)
-  }
   return (
-    <>
-      <Nav nav={nav} handleNav={handleNav} handleScroll={handleScroll}/>
-      <SideMenu nav={nav} handleNav={handleNav} handleScroll={handleScroll}/>
+    <div className='min-h-screen bg-gray-900 text-gray-200 scrollbar scrollbar-track scrollbar-thumb'>
+      <Nav/>
       <Routes>
-        <Route path="/" exact element={<Home/>}/>
-        <Route path="/coins/page=1" element={<CoinsOne/>}/>
-        <Route path="/coins/page=2" element={<CoinsTwo/>}/>
-        <Route path="/coin/:id" element={<Coin/>}/>
+        <Route path="/" element={<Market/>}/>
+        <Route path="/watchlist" element={<Watchlist/>}/>
         <Route path="/news" element={<News/>}/>
+        <Route path="/coin/:id" element={<Coin/>}/>
       </Routes>
-    </>
+    </div>
   )
 }
 
