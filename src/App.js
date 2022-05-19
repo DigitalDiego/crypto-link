@@ -16,7 +16,7 @@ const App = () => {
   }
   window.addEventListener("scroll", handleButton)
   return (
-    <div className='min-h-screen bg-gray-900 text-gray-200 scrollbar scrollbar-track scrollbar-thumb'>
+    <div className='min-h-screen bg-gray-900 text-gray-200'>
       <Nav/>
       <Routes>
         <Route path="/" element={<Market/>}/>

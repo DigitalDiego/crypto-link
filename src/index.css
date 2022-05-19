@@ -12,13 +12,14 @@ body {
     width:calc(70% / 4);
   }
 }
-.scrollbar::-webkit-scrollbar{
-  width:5px;
+body::-webkit-scrollbar{
+  width:2px;
 }
-.scrollbar-track::-webkit-scrollbar-track{
+body::-webkit-scrollbar-track{
   border:none;
+  background:#111827;
 }
-.scrollbar-thumb::-webkit-scrollbar-thumb{
+body::-webkit-scrollbar-thumb{
   border-radius:10px;
-  background:#1F2937;
+  background:#E5E7EB;
 }
