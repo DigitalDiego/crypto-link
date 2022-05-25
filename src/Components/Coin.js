@@ -12,7 +12,7 @@ const Coin = () => {
         }).catch(error => {console.log(error)})
   }, [])
   return (
-    <div className='w-full h-[90vh] px-4 flex justify-center items-center flex-col'>
+    <div className='w-full h-[90vh] px-4 flex justify-center items-center flex-col tracking-[.5px]'>
         <div className='w-full h-[8vh] flex justify-center items-center'>
             <img className='w-8 h-8 mr-1' src={coin?.image?.small} alt={coin.name} />
             <p className='text-2xl 2xl:text-3xl'>{coin?.name}</p>
@@ -23,11 +23,11 @@ const Coin = () => {
         </div>
         <div className='w-full h-[8vh] flex justify-between items-center border-b-solid border-slate-100 border-b-[1px] text-xl md:w-3/5'>
             <p>Price</p>
-            <p>${coin?.market_data?.current_price?.usd < 0 ? coin?.market_data?.current_price.usd : coin?.market_data?.current_price?.usd.toLocaleString()}</p>
+            <p>${coin?.market_data?.current_price?.usd < 1000 ? coin?.market_data?.current_price.usd : coin?.market_data?.current_price?.usd.toLocaleString()}</p>
         </div>
         <div className='w-full h-[8vh] flex justify-between items-center border-b-solid border-slate-100 border-b-[1px] text-xl md:w-3/5'>
             <p>% Change</p>
-            <p className={coin?.market_data?.price_change_percentage_24h < 0 ? 'flex justify-center items-center text-[crimson]' : 'flex justify-center items-center text-[lime]'}>
+            <p className={`flex justify-center items-center ${coin?.market_data?.price_change_percentage_24h < 0 ? "text-[crimson]" : "text-[lime]"}`}>
                 <BsArrowUp className={coin?.market_data?.price_change_percentage_24h < 0 ? "hidden" : "inline mr-1"}/>
                 <BsArrowDown className={coin?.market_data?.price_change_percentage_24h < 0 ? "inline mr-1" : "hidden"}/>
                 {coin?.market_data?.price_change_percentage_24h.toFixed(2)}%
@@ -35,10 +35,10 @@ const Coin = () => {
         </div>
         <div className='w-full h-[8vh] flex justify-between items-center border-b-solid border-slate-100 border-b-[1px] text-xl md:w-3/5'>
             <p>$ Change</p>
-            <p className={coin?.market_data?.price_change_percentage_24h < 0 ? 'flex justify-center items-center text-[crimson]' : 'flex justify-center items-center text-[lime]'}>
+            <p className={`flex justify-center items-center text-[crimson] ${coin?.market_data?.price_change_percentage_24h < 0 ? "text-[crimson]" : "text-[lime]"}`}>
                 <BsArrowUp className={coin?.market_data?.price_change_percentage_24h < 0 ? "hidden" : "inline mr-1"}/>
                 <BsArrowDown className={coin?.market_data?.price_change_percentage_24h < 0 ? "inline mr-1" : "hidden"}/>
-                ${coin?.market_data?.price_change_24h_in_currency?.usd.toLocaleString()}
+                ${coin?.market_data?.price_change_24h_in_currency?.usd < 1000 ? coin?.market_data?.price_change_24h_in_currency?.usd.toFixed(5) : coin?.market_data?.price_change_24h_in_currency?.usd.toLocaleString()}
             </p>
         </div>
         <div className='w-full h-[8vh] flex justify-between items-center border-b-solid border-slate-100 border-b-[1px] text-xl md:w-3/5'>

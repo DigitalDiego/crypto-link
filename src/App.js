@@ -24,9 +24,11 @@ const App = () => {
         <Route path="/news" element={<News/>}/>
         <Route path="/coin/:id" element={<Coin/>}/>
       </Routes>
-      <button className={button ? 'fixed bottom-[1em] right-1/2 bg-gray-200/50 w-[2em] h-[2em] grid place-items-center text-gray-200 rounded-full border-none outline-none cursor-pointer backdrop-blur-sm text-lg translate-x-1/2' : 'fixed bottom-[1em] right-1/2 bg-gray-200/50 w-[2em] h-[2em] grid place-items-center text-gray-200 rounded-full border-none outline-none cursor-pointer backdrop-blur-sm text-lg translate-x-1/2 hidden'} onClick={scrollUp}>
-        <IoIosArrowUp/>
-      </button>
+      {button &&
+        <button className='fixed bottom-[1em] right-1/2 bg-gray-200 w-[2em] h-[2em] grid place-items-center text-gray-900 rounded-full border-none outline-none cursor-pointer backdrop-blur-sm text-lg translate-x-1/2' onClick={scrollUp}>
+          <IoIosArrowUp/>
+        </button>
+      }
     </div>
   )
 }

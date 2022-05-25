@@ -39,7 +39,7 @@ const PageOne = () => {
           }
           <div className='flex justify-center items-center bg-gray-800 rounded-full px-2 py-1 mx-4'>
             <AiOutlineSearch className='mr-1'/>
-            <input className='bg-transparent placeholder:text-gray-200 border-none outline-none' type="text" placeholder="Search coin..." onChange={event => setSearch(event.target.value)} value={search}/>
+            <input className='bg-transparent placeholder:text-gray-200 border-none outline-none tracking-[.5px]' type="text" placeholder="Search coin..." onChange={event => setSearch(event.target.value)} value={search}/>
           </div>
           {page == 3 ? <div className='w-5 h-5'></div> :
             <button className='w-5 h-5 grid place-items-center border-none outline-none cursor-pointer' onClick={handleForwardArrow}>
@@ -56,19 +56,19 @@ const PageOne = () => {
         <p className='flex justify-end items-center nav-width'>Price</p>
       </div>
       {searchedCoin.map((coin, index) => (
-        <Link className={index % 2 === 0 ? 'w-full h-[8vh] flex justify-between items-center px-4 md:h-[10vh]' : 'w-full h-[8vh] bg-gray-800 flex justify-between items-center px-4 md:h-[10vh]'} to={`/coin/${coin.id}`} key={index}>
+        <Link className={`w-full h-[8vh] flex justify-between items-center px-4 md:h-[10vh] ${index % 2 === 0 ? "bg-gray-800" : "bg-transparent"}`} to={`/coin/${coin.id}`} key={index}>
           <div className='flex justify-start items-center md:w-[30%]'>
             <img className='w-5 h-5 mr-2' src={coin.image} alt={coin.name} />
             <p>{coin.name}</p>
           </div>
           <p className='hidden nav-width md:flex justify-center items-center'>${coin.market_cap.toLocaleString()}</p>
           <p className='hidden nav-width md:flex justify-center items-center'>${coin.total_volume.toLocaleString()}</p>
-          <p className={coin.price_change_percentage_24h < 0 ? 'hidden nav-width md:flex justify-center items-center text-[crimson]' : 'hidden nav-width md:flex justify-center items-center text-[lime]'}>
+          <p className={`hidden nav-width md:flex justify-center items-center ${coin.price_change_percentage_24h < 0 ? "text-[crimson]" : "text-[lime]"}`}>
             <BsArrowUp className={coin.price_change_percentage_24h < 0 ? ' hidden mr-1' : 'inline mr-1'}/>
             <BsArrowDown className={coin.price_change_percentage_24h < 0 ? 'inline mr-1' : 'hidden mr-1'}/>
             {coin.price_change_percentage_24h.toFixed(2)}%
           </p>
-          <p className='flex justify-end items-center nav-width'>${coin.current_price < 0 ? coin.current_price : coin.current_price.toLocaleString()}</p>
+          <p className='flex justify-end items-center nav-width'>${coin.current_price < 1000 ? coin.current_price : coin.current_price.toLocaleString()}</p>
         </Link>
       ))}
     </div>
