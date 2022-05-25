@@ -49,14 +49,24 @@ const PageOne = () => {
         </div>
       </div>
       <div className='px-4 w-full h-[8vh] flex justify-between items-center border-b-solid border-b-gray-800 border-b-[1px]'>
-        <p className='flex justify-start items-center md:w-[30%]'>Coin</p>
-        <p className='hidden nav-width md:grid place-items-center'>Market Cap</p>
-        <p className='hidden nav-width md:grid place-items-center'>Volume</p>
-        <p className='hidden nav-width md:grid place-items-center'>% Change</p>
-        <p className='flex justify-end items-center nav-width'>Price</p>
+        <div className='flex justify-start items-center md:w-[30%]'>
+          <p className='inline after:content[""] after:block after:w-full after:h-[1px] after:bg-gray-200'>Coin</p>
+        </div>
+        <div className='hidden nav-width md:grid place-items-center'>
+          <p className='inline after:content[""] after:block after:w-full after:h-[1px] after:bg-gray-200'>Market Cap</p>
+        </div>
+        <div className='hidden nav-width md:grid place-items-center'>
+          <p className='inline after:content[""] after:block after:w-full after:h-[1px] after:bg-gray-200'>Volume</p>
+        </div>
+        <div className='hidden nav-width md:grid place-items-center'>
+          <p className='inline after:content[""] after:block after:w-full after:h-[1px] after:bg-gray-200'>% Change</p>
+        </div>
+        <div className='flex justify-end items-center nav-width'>
+          <p className='inline after:content[""] after:block after:w-full after:h-[1px] after:bg-gray-200'>Price</p>
+        </div>
       </div>
       {searchedCoin.map((coin, index) => (
-        <Link className={`w-full h-[8vh] flex justify-between items-center px-4 md:h-[10vh] ${index % 2 === 0 ? "bg-gray-800" : "bg-transparent"}`} to={`/coin/${coin.id}`} key={index}>
+        <Link className={`w-full h-[8vh] flex justify-between items-center px-4 md:h-[10vh] 2xl:h-[8vh] ${index % 2 === 0 ? "bg-gray-800" : "bg-transparent"}`} to={`/coin/${coin.id}`} key={index}>
           <div className='flex justify-start items-center md:w-[30%]'>
             <img className='w-5 h-5 mr-2' src={coin.image} alt={coin.name} />
             <p>{coin.name}</p>
