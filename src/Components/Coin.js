@@ -10,7 +10,7 @@ const Coin = () => {
         .then(res => {
             setCoin(res.data)
         }).catch(error => {console.log(error)})
-  }, [])
+  }, [id])
   return (
     <div className='w-full h-[90vh] px-4 flex justify-center items-center flex-col tracking-[.5px]'>
         <div className='w-full h-[8vh] flex justify-center items-center'>
@@ -38,7 +38,7 @@ const Coin = () => {
             <p className={`flex justify-center items-center text-[crimson] ${coin?.market_data?.price_change_percentage_24h < 0 ? "text-[crimson]" : "text-[lime]"}`}>
                 <BsArrowUp className={coin?.market_data?.price_change_percentage_24h < 0 ? "hidden" : "inline mr-1"}/>
                 <BsArrowDown className={coin?.market_data?.price_change_percentage_24h < 0 ? "inline mr-1" : "hidden"}/>
-                ${coin?.market_data?.price_change_24h_in_currency?.usd < 1000 ? coin?.market_data?.price_change_24h_in_currency?.usd.toFixed(5) : coin?.market_data?.price_change_24h_in_currency?.usd.toLocaleString()}
+                ${coin?.market_data?.price_change_24h_in_currency?.usd < 10 && coin?.market_data?.price_change_24h_in_currency?.usd > -10 ? coin?.market_data?.price_change_24h_in_currency?.usd.toFixed(10) : coin?.market_data?.price_change_24h_in_currency?.usd?.toLocaleString()}
             </p>
         </div>
         <div className='w-full h-[8vh] flex justify-between items-center border-b-solid border-slate-100 border-b-[1px] text-xl md:w-3/5'>
