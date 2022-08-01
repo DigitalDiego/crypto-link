@@ -28,7 +28,7 @@ const PageOne = ({page, setPage}) => {
   }
   return (
     <div className='tracking-[.5px]'>
-      <div className='px-4 w-full h-[8vh] flex justify-center items-center border-b-solid border-b-gray-800 border-b-[1px] md:justify-between md:h-[10vh]'>
+      <div className='bg-gray-900 px-4 w-full h-[8vh] flex justify-center items-center border-b-solid border-b-gray-800 border-b-[1px] md:justify-between md:h-[10vh]'>
         <p className='hidden text-3xl md:inline'>Market</p>
         <div className='flex justify-center items-center'>
           {page === 1 ? <div className="w-5 h-5"></div> :
@@ -47,7 +47,7 @@ const PageOne = ({page, setPage}) => {
           }
         </div>
       </div>
-      <div className='px-4 w-full h-[8vh] flex justify-between items-center border-b-solid border-b-gray-800 border-b-[1px]'>
+      <div className='bg-gray-900 px-4 w-full h-[8vh] flex justify-between items-center border-b-solid border-b-gray-800 border-b-[1px]'>
         <div className='flex justify-start items-center md:w-[30%]'>
           <p className='inline after:content[""] after:block after:w-full after:h-[1px] after:bg-gray-200'>Coin</p>
         </div>
